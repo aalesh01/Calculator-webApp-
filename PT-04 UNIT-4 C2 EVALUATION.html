@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Evaluation</title>
+        <style>
+      body {
+        padding: 0px;
+        margin:  0px;
+        box-sizing: border-box;
+      }
+      html {
+        background-color:darkgrey;
+        margin: 0%;
+      }
+      .container {
+        width: 100%;
+        margin: auto;
+        height: max-content;
+      }
+      .container > div {
+        padding-bottom: 3%;
+        text-align: center;
+        background-color:rgb(255, 255, 255);
+      }
+      .container>div>h1 {
+        margin: 0px;
+        padding: 4%;
+      }
+      .box1 {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: space-evenly;
+      }
+      .box1 > div {
+        text-align: left;
+        margin: 1%;
+      }
+      .box1 > div > div > p {
+        color: darkgrey;
+        font-size: 18px;
+      }
+      .box2 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        width: 90%;
+        margin: auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        gap: 5%;
+        background-color:aliceblue;
+      }
+      .box2 > div > img {
+        width: 35%;
+      }
+      .box2 > div {
+        padding: 5%;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+          rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        border-radius: 12%;
+        background-color: white;
+      }
+
+      @media all and (max-width: 600px) {
+        .box1 > div > div > img {
+          height: auto;
+          width: 200;
+          width: 100%;
+        }
+        .box2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media all and (min-width: 600px) and (max-width: 1024px) {
+        .box2 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div>
+                <h1>Our Blog Posts</h1>
+            </div>
+            <div class="box1">
+                <div>
+                    <div>
+                        <img src="https://picsum.photos/400/300" alt="" />
+                    </div>
+                    <div>
+                        <p>29, January 2019</p>
+                        <h2>Architectural Art Modern.</h2>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://picsum.photos/400/300" alt="" />
+                    </div>
+                    <div>
+                        <p>29, January 2019</p>
+                        <h2>Architectural Art Modern.</h2>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="https://picsum.photos/400/300" alt="" />
+                    </div>
+                    <div>
+                        <p>29, January 2019</p>
+                        <h2>Architectural Art Modern.</h2>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:darkgray;" class="box2">
+                <div>
+                    <img src="https://logo.clearbit.com/spotify.com""alt="">
+                    <h2>Creative Design</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://logo.clearbit.com/spotify.com""alt="">
+                    <h2>Digital Marketing</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://logo.clearbit.com/spotify.com""alt="">
+                    <h2>Application Design</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://logo.clearbit.com/spotify.com""alt="">
+                    <h2>Web Development</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://logo.clearbit.com/spotify.com""alt="">
+                    <h2>Branding</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://logo.clearbit.com/spotify.com""alt="">
+                    <h2>Graphic Design</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://logo.clearbit.com/spotify.com""alt="">
+                    <h2>Email Marketing</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://logo.clearbit.com/spotify.com""alt="">
+                    <h2>Web Design</h2>
+                    <p>
+                        Far far away, behind the word mountains, far from the
+                        countries
+                        Vokalia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

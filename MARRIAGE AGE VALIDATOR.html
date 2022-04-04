@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            width: 70%;
+            margin: auto;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Your Gender and Date of Birth</h1>
+    <div class="container">
+        <div>
+            <select name="Gender" id="Gender">
+                <option selected disabled>Enter Your Gender</option>
+                <option value="Male">Male</option>
+                <option value="Fe-male">Fe-male</option>
+
+            </select>
+        </div>
+        <div>
+            <label for="birth Year">Birthday:</label>
+            <input type="number" id="dob">
+        </div>
+        <button onclick="submit()">Submit</button>
+        <div>
+            <h1 id="result">♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥</h1>
+        </div>
+    </div>
+</body>
+<script>
+     function submit(){
+           if((document.getElementById('Gender').value=='Male' 
+           && document.getElementById('dob').value<=2022-21) 
+           || (document.getElementById('Gender').value == 'Fe-male'
+                   && document.getElementById('dob').value <= 2022 - 18)){
+                document.getElementById('result').innerText='You Can Marry';
+                alert("You Can Marry")
+           }
+           else {
+               document.getElementById('result').innerText = "You Can't Marry";
+               alert("You Can't Marry") 
+           }
+       }
+</script>
+</html>

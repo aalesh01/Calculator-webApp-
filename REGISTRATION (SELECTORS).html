@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+       
+        }
+      .blackbg {
+        background-color: black;
+        color: white;
+      }
+      .parent {
+          height: fit-content;
+          width: 30%;
+          display: flex;
+          margin: 50px 20px 0px 20px;
+      }
+      #reg {
+          text-align: center;
+      }
+      #alert {
+          color: red;
+      }
+      .child {
+        margin: auto;
+        padding: 20px;
+      }
+    </style>
+    <title>REGISTERATION</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <p>NAME</p>
+            <input type="text">
+            <p>EMAIL</p>
+            <input type="email">
+            <p>MOBILE</p>
+            <input type="number">
+            <p id="alert">Enter a Valid Number</p>
+            <p id="reg" class="blackbg">REGISTER</p>
+        </div>
+
+        <div class="blackbg child">
+            <p>NAME</p>
+            <p style="font-size:25px;">MASAI</p>
+            <p>EMAIL</p>
+            email@masaischool.com
+            <p>MOBILE</p>
+            9876543210
+        </div>
+
+    </div>
+</body>
+</html>

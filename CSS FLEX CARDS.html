@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS FLEX CARDS</title>
+    <style>
+      *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      .box1 {
+        font-size: 20px;
+        width: 70%;
+        margin: auto;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        text-align: center;
+      }
+      h1{
+      padding-bottom: 3%;
+      color: rgb(209, 125, 14);
+      font-size: 80px;
+      }
+
+
+      .box2{
+        display: flex;
+        width:70%;
+        margin: auto;
+       
+        
+      }
+      .box2>div {
+          margin:1%;
+          text-align: center;
+          align-items:baseline;
+      }
+      h4{
+        font-size: 30px;
+        padding: 5%;
+      }
+      h4+p{
+        color:darksalmon;
+      }
+      @media all and (min-width : 0px) and (max-width : 1024px){
+      .box2{
+         flex-direction: column;
+      }
+      .box2>div{
+         padding: 10%;
+      }
+      h1{
+      font-size: 50px;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box1">
+        <h1>Rooms & Suits</h1>
+        <p>
+          Far far away, behind the word mountains, far from the countries
+          Vokalia and Consonantia, there live the blind texts. Separated they
+          live in Bookmarksgrove right at the coast of the Semantics, a large
+          language ocean.
+        </p>
+      </div>
+      <div class="box2">
+        <div>
+          <img src="https://preview.colorlib.com/theme/sogo/images/ximg_1.jpg.pagespeed.ic.sI14MfHd8f.webp" alt="" />
+          <h4>Single Room</h4>
+          <p>90$/PER NIGHT</p>
+        </div>
+        <div>
+          <img src="https://preview.colorlib.com/theme/sogo/images/ximg_2.jpg.pagespeed.ic.Y_xvNxfEhu.webp" alt="" />
+          <h4>Family Room</h4>
+          <p>120S/PER NIGHTT</p>
+        </div>
+        <div>
+          <img src="https://preview.colorlib.com/theme/sogo/images/ximg_3.jpg.pagespeed.ic.mYPnC0rXDl.webp alt="" />
+          <h4>Presidential Room</h4>
+          <p>90$/PER NIGHT</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

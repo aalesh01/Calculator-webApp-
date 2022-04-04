@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Like Button</title>
+    <style>
+        img{
+            height: 60px;
+            width: 60px;
+        }
+        body{
+           text-align: center;
+        }
+        button:hover{
+            background-color: paleturquoise;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>0</h1>
+    <button><img src="https://www.freeiconspng.com/uploads/youtube-like-png-19.png" alt="like"></button>
+    <button><img src="https://purepng.com/public/uploads/large/facebook-dislike-0xe.png" alt="unlike"></button>
+</body>
+<script>
+    var buttons=document.querySelectorAll('button');
+    if(localStorage.count===undefined)
+    localStorage.setItem("count", 0);
+    else (document.querySelector('h1').innerText)= localStorage.count;
+
+    buttons[0].addEventListener('click',increment);
+    buttons[1].addEventListener('click',decrement);
+
+    function increment(){
+        
+        document.querySelector('h1').innerText= ++localStorage.count;
+    }
+    function decrement(){
+        document.querySelector('h1').innerText = --localStorage.count;
+    }
+</script>
+</html>
