@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+</head>
+<style>
+    body>h1{
+        color: lightslategrey;
+        text-decoration: underline;
+        font-size:50px;
+    }
+    body,input,select,button{
+        text-align: center;
+        font-size: 30px;
+    }
+  
+    button{
+        padding: 1%;
+        margin: 1%;
+    }
+    .cardContainer{
+        display: flex;
+        gap: 5%;
+        flex-wrap: wrap;
+        font-size: 18px;
+    }
+    .cardContainer>div{
+       box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+       padding: 2%;
+       border-radius: 12px;
+       margin:2%;
+    }
+</style>
+<body>
+    <h1>Expense Tracker</h1>
+    <form action="">
+        <label for="Month">Select Month</label> <br>
+        <select name="Month" id="all_months"> </select> <br>
+        <label for="income">Income</label> <br>
+        <input class="inputsAll" name="income" type="number"> <br>
+        <label for="expense">Expense</label> <br>
+        <input class="inputsAll" name="expense" type="number"> <br>
+        <button id="btn">Submit</button>
+    </form>
+
+    <div class="cardContainer">
+
+    </div>
+    
+</body>
+<script>
+    if(localStorage.getItem("card1")===null){
+        var allCards=[]; 
+        console.log("declaring")
+    }
+    else{ allCards = JSON.parse(localStorage.getItem("card1"));
+
+    
+
+    allCards.forEach(function(elem){
+        var divnew=document.createElement("div");
+        divnew.innerHTML=elem;
+        document.querySelector('.cardContainer').append(divnew);
+        
+    })
+
+    }
+ 
+    // Months DropDown
+    var months=["January","February","March","April","May","June","July","August",
+                "September","Octomber","November","December"];
+    months.forEach(function(elem){
+        var opt=document.createElement('option');
+        opt.setAttribute("value",elem);
+        opt.innerText=elem;
+        document.getElementById("all_months").append(opt);
+    }
+    )
+    
+    // On Submit
+    document.getElementById('btn').addEventListener('click',addcard);
+
+    // add Card
+    function addcard(){
+        
+        
+        event.preventDefault();
+       
+        var card=document.createElement("div");
+         
+        var heading=document.createElement('h1');
+        localStorage.setItem("Month",document.getElementById('all_months').value);
+        heading.innerText=localStorage.Month;
+        
+        var inputs= document.getElementsByClassName("inputsAll");
+
+        var para1= document.createElement('p');
+        localStorage.setItem("Income",inputs[0].value);
+        para1.innerText="Your Income is: "+localStorage.Income;
+        
+        
+        var para2 = document.createElement('p');
+        localStorage.setItem("Expense", inputs[1].value);
+        para2.innerText ="Your Expense is: "+localStorage.Expense;
+        
+        var para3 = document.createElement('p');
+        para3.innerText ="Your Savings are: "+(localStorage.Income - localStorage.Expense);
+
+        card.append(heading,para1,para2,para3);
+        
+        
+        
+        allCards.push(card.innerHTML)
+        localStorage.setItem("card1",JSON.stringify(allCards));
+        
+        
+         
+
+        document.querySelector(".cardContainer").append(card);
+        
+    }
+
+
+</script>
+</html>
