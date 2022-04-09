@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CALCULATOR</title>
+  <style>
+    body{
+      padding: 0%;
+      margin: 0%;
+      box-sizing: border-box;
+    }
+    .heading{
+      text-align: center;
+      font-size: 30px;
+      color: teal;
+    }
+    .calculator{
+      width: 300px;
+      margin: auto;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      padding: 50px;
+      border-radius: 12px;
+    }
+    .display{
+      background-color: white;
+      font-size: 25px;
+      box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      border-radius: 8px;
+      margin-bottom: 10%;
+    }
+    .display>input{
+      font-size: 25px;
+      font-weight: 200;
+      padding: 5%;
+      border: 0;
+      direction: rtl;
+    }
+    .keypad{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-template-rows: auto;
+      gap: 4%;
+    }
+    .keypad>button{
+      padding: 20%;
+      font-size: larger;
+      font-weight: 900;
+      background-color: white;
+      border-radius: 8px;
+      border: 0px;
+      box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    }
+    button:active{
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    border-bottom: none;
+    }
+    #red{
+      color:white;
+      background-color: red;
+    }
+    #result{
+      background-color: green;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="heading"><h1>Masai Calculator</h1></div>
+  <div class="calculator">
+    <div class="display">
+     <input placeholder="0" type="string">
+    </div>
+    <div class="keypad">
+      <button class="number">1</button>
+      <button class="number">2</button>
+      <button class="number">3</button>
+      <button class="black" id="+">+</button>
+      <button class="number">4</button>
+      <button class="number">5</button>
+      <button class="number">6</button>
+      <button class="black" id="-">-</button>
+      <button class="number">7</button>
+      <button class="number">8</button>
+      <button class="number">9</button>
+      <button class="black" id="x">*</button>
+      <button id="red" id="C">C</button>
+      <button class="number">0</button>
+      <button id="result" id="=">=</button>
+      <button class="black" id="/">/</button>
+    </div>
+  </div>
+</body>
+<script>
+  if (str === undefined) var str = 0;
+
+  // css
+  document.querySelectorAll(".black").forEach(element => {
+  
+           element.style.backgroundColor="black";
+           element.style.color = "white";
+  }
+  );
+  
+  // C button
+  document.getElementById('red').addEventListener("click",function(){
+    document.querySelector(".display>input").value="";
+    str=0;
+  }
+  );
+
+  document.querySelectorAll(".number").forEach(element => {
+    element.addEventListener("click", showOnDisplay);
+    function showOnDisplay() {
+      var num = element.innerText;
+      var op=document.getElementById("-").innerText;
+      document.querySelector("input").value += num;
+    }
+  });
+  
+  document.querySelectorAll(".black").forEach(element => {
+      element.addEventListener("click", calculate);
+      function calculate() {
+        console.log(str); 
+        var op = element.innerText;
+        str = str+document.querySelector("input").value+ op ;
+        document.querySelector(".display>input").value = "";
+        console.log(str);
+
+      }
+    });
+   
+    document.getElementById("result").addEventListener("click",function(){
+       str += document.querySelector("input").value;
+       document.querySelector(".display>input").value = eval(str);
+       console.log(str); 
+    })
+
+  
+
+    
+
+</script>
+</html>
